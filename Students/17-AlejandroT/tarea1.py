@@ -1,21 +1,32 @@
-class Alejandro Gonzalez
+class AlejandroGonzalez():
+    nombre = "Alejandro"
+    edad = 19
+    estatura = 1.71
+    personalidad = "Buena onda, extrovertido y hablador"
+    def __init__(self, nombre=nombre, edad=edad, estatura=estatura, personalidad=personalidad) -> None:
+        self.nombre = nombre
+        self.edad = edad
+        self.estatura = estatura
+        self.personalidad = personalidad
+        
 
+    def print_all(self):
+        print(f"Nombre del Estudiante: {self.nombre}")
+        print(f"Edad: {self.edad} años")
+        print(f"Estatura: {self.estatura} m")
+        print(f"Personalidad: {self.personalidad}")
 
-nombre = "Alejandro"
-edad = 19
-estatura = 1.71
-personalidad = "Buena onda, extrovertido y hablador"
+class Actividades:
+    fav_1 = "ir al gym"
+    fav_2 = "salir con amigos"
+    fav_3 = "estudiar"
+    fav_4 = "comer"
 
-print(f"Nombre del Estudiante: {nombre}")
-print(f"Edad: {edad} años")
-print(f"Estatura: {estatura} m")
-print(f"Personalidad: {personalidad}")
+    def mis_acts(self):
+        print("mis actividades favoritas son "+ self.fav_1 + self.fav_2 + self.fav_3+"  y tambien "+ self.fav_4)
 
-class Actividades
+alejandro = AlejandroGonzalez()
+alejandro.print_all()
 
-fav_1 = "ir al gym"
-fav_2 = "salir con amigos"
-fav_3 = "estudiar"
-fav_4 = "comer"
-
-print("mis actividades favoritas son "+ fav_1 + fav_2 + fav_3"  y tambien "+ fav_4)
+alejandro_acts = Actividades()
+alejandro_acts.mis_acts()
