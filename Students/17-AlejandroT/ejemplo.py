@@ -30,15 +30,16 @@ def registro_de_control(process, state):
 def registro_de_datos(data, state, process):
     control =registro_de_control(process, state)
     if control ==1:
-        print(f"data will be sent {data}")
+        print(f"se le informo al {data}")
     if control ==0:
-        print(f"data will be hold ")
+        print(f"se le informo al {data}")
     if control ==2:
-        print(f"data will be process ")
+        print(f"se le informo al {data} ")
 
 if __name__ == "__main__":
-    mi_mesero= "meserear"
-    registro_de_datos(mi_mesero, SIN_HACER_NADA, "para tomar pedido")
+    mi_tarea = "Supervisor"
+    registro_de_datos(mi_tarea, SIN_HACER_NADA, "para tomar pedido")
+
  
 
 
