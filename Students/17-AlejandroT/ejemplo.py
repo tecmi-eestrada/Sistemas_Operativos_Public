@@ -39,6 +39,7 @@ def registro_de_datos(data, state, process):
 if __name__ == "__main__":
     mi_tarea = "Supervisor"
     registro_de_datos(mi_tarea, SIN_HACER_NADA, "para tomar pedido")
+
  
 
 
