@@ -49,26 +49,3 @@ class Limpieza
 
 class Otros
     def __init__(self, nombre, edad, cargo):
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
