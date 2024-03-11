@@ -10,6 +10,7 @@ def registro_de_estado(state):
         print ("lavando")
         return state
     elif state == DESCANSANDO:
+        print ("Decansando")
         return state
     
 def reistro_de_control(process, state):
@@ -23,17 +24,18 @@ def reistro_de_control(process, state):
     if state == DESCANSANDO:
         print(f"El cocinero esta en descanso {process}, state: {state}")
         return 2
+    pass
     
 def registro_de_datos(data, state, process):
     control = reistro_de_control(process, state)
     if control == 1:
         print(f"Se le informo al {data}")
     if control == 0:
-        print(f"Se le informo al{data}")
+        print(f"Se le informo al {data}")
     if control == 2:
-        print(f"Se le informo al{data}")
+        print(f"Se le informo al {data}")
     
 if __name__ == "__main__":
     mi_tarea = "Supervisor"
-    registro_de_datos(mi_tarea, DESCANSANDO, "")
+    registro_de_datos(mi_tarea, COCINANDO, "")
 
