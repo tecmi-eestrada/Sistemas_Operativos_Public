@@ -1,0 +1,115 @@
+import random
+if __name__ == "__main__":
+        estados =["libre","ocupado","enespera"]
+        lista_mesas= [1 ,2 ,3 ,4 ,5]
+        lista_ordenes = [223, 443, 43 , 122 , 553]
+        lista_meseros = ["german"  "damian","martin","juventino"]
+        lista_cocineros = ["daniel", "miguel", "Oziel"]
+        lista_limpieza = [ "joaquin", "rodrigo"]
+        gerente = ["Jhonny"]
+x = random.randint (0, 3)
+xy = random.randint(0,2)
+
+print("MENU")
+print("¿QUE QUIERES HACER?")
+que = input("A) PEDIR MESA B)SABER DISPOINIBILIDAD C) SALIR")
+if que == "A" or "a" :
+    aa = input("¿cual mesa quieres tomar?")
+    
+    if aa == 1:
+                print (lista_mesas[0])
+                cliente = []
+                dir = {
+                "Mesa" : lista_mesas[0],
+                "orden" : lista_ordenes[0],
+                "estado de la mesa" : estados[0]}
+                cliente.append(dir)
+                print(cliente)
+                print("¿todo bien con su orden?")
+                queso = input ("A)si todo bien B) hay algun problema llamar gerente")
+                if queso == "A" or "a":
+                        print("Bienvenido su mesero sera asignado aleatoriamente o decide elegirlo")
+                        mesero = input("A) Aleatorio B)Elegir mi mesero")
+                        if mesero == "A" or "a": 
+                            listarandom = lista_mesas[x]
+                            print("tu mesero sera" , (listarandom))
+
+                        if mesero == "B" or "b":
+                            print("la lista de meseros es", lista_meseros)
+                            q = input("coloque el nombre de su mesero")
+                            if q == "german":
+                                dir2 = {
+                                "mesero" : lista_meseros[0], 
+                                "cocinero": lista_cocineros[xy]
+                                }
+                                cliente.append(dir2)
+                                print(cliente)
+
+                            if q == "damian":
+                                dir2 = {
+                                "mesero" : lista_meseros[1],
+                                "cocinero": lista_cocineros[xy]
+                                }
+                                cliente.append(dir2)
+                                print(cliente)
+                                
+                            if q == "martin":
+                                dir2 = {
+                                "mesero" : lista_meseros[2],
+                                "cocinero": lista_cocineros[xy]
+                                }
+                                cliente.append(dir2)
+                                print(cliente)
+                            if q == "juventino":
+                                dir2 = {
+                                "mesero" : lista_meseros[3],
+                                "cocinero": lista_cocineros[xy]
+                                }      
+                                cliente.append(dir2)
+                                print(cliente)
+                        else:
+                            breakpoint
+                if queso == "B" or "b":
+                    print("el" , gerente, "te atendera que mensaje quieres dejar")     
+                    queja = input ("dejar mensaje")   
+                    print(queja)
+                    
+                
+    if aa == 2:
+            print (lista_mesas[1])
+            cliente = []
+            dir = {
+            "Mesa" : lista_mesas[0],
+            "orden" : lista_ordenes[0],
+            "estado de la mesa" : estados[0]} 
+            print("¿todo bien con su orden?")
+            queso = input ("A)si todo bien B) hay algun problema llamar gerente")
+        
+    if aa == 3:
+            print (lista_mesas[2])
+            cliente = []
+            dir = {
+            "Mesa" : lista_mesas[0],
+            "orden" : lista_ordenes[0],
+            "estado de la mesa" : estados[0]} 
+            print("¿todo bien con su orden?")
+            queso = input ("A)si todo bien B) hay algun problema llamar gerente")
+
+    if aa == 4:
+            print (lista_mesas[3])
+            cliente = []
+            dir = {
+            "Mesa" : lista_mesas[0],
+            "orden" : lista_ordenes[0],
+            "estado de la mesa" : estados[0]} 
+            cliente.append(dir)
+            print(cliente)
+            print("¿todo bien con su orden?")
+            queso = input ("A)si todo bien B) hay algun problema llamar gerente")
+
+
+
+
+
+
+
