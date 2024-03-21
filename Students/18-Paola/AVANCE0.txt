@@ -1,0 +1,103 @@
+import random
+
+
+if __name__ == "__main__":
+  estados = ["Libre", "Ocupado", "En espera", "Ocupado", "Libre"]
+  lista_mesas = [1,2,3,4,5]
+  lista_ordenes = [223, 443, 43, 122,553]
+
+  lista_meseros = ["German", "Damian", "Martin", "Juventino","Pedro"]
+  lista_cocineros = ["Daniel", "Miguel", "Oziel"]
+  lista_limpieza = ["Joaquin", "Rodrigo"]
+  gerente = ["Jhonny"]
+
+#GLOBALES PARA PODERLAS UTILIZAR EN OTRAS FUNCIONES
+global meseros_libres
+global meseros_ocupados
+meseros_libres  = []
+meseros_ocupados = []
+
+def Gest_meseros (lista_meseros):
+     mesas = [1,2,3,4,5]
+     random.shuffle(mesas)
+     ocupacion = ["Libre", "Ocupado", "En espera", "Ocupado", "Libre"]
+     random.shuffle(ocupacion)
+    
+
+     for i, mesero in enumerate(lista_meseros):
+         dicMeseros = {
+             "Nombre del mesero ": mesero,
+             "Mesa":mesas[i] ,
+             "Estado del mesero":ocupacion[i],
+             }
+         
+         
+         if dicMeseros["Estado del mesero"] == "Ocupado": # no se como ponerle aqui para validar si el mesero esta ocupado,
+            #que lo meta a esa lista
+             meseros_ocupados.append(dicMeseros)
+
+         else:
+            meseros_libres.append(dicMeseros)
+            
+
+     return meseros_libres, meseros_ocupados
+
+
+
+# print(Gest_meseros(lista_meseros)) #IMPIRME LOS MESEROS LIBRES Y OCUPADOS EN DISTINTAS LISTAS
+
+
+#GLOBALES PARA PODER UTILIZARLAS EN OTRAS FUNCIONES
+global cocineros_libres
+global cocineros_ocupados
+global ordenes_espera 
+cocineros_libres = []
+cocineros_ocupados = []
+ordenes_espera =[]
+
+def Gest_cocineros (lista_cocineros):
+    
+    orden  = [223, 443, 43, 122,553]
+    random.shuffle(orden)
+    for i, cocinero in enumerate(lista_cocineros):
+        dicCocineros = {
+            "Nombre del cocinero" : cocinero,
+            "Orden":orden[i],
+            "Estado del cocinero":"Ocupado"
+        }
+        
+        # for elemento in dicCocineros: #Validacion para buscar las ordenes que ya han sido asignadas
+        #       if elemento not in orden:
+        #            ordenes_espera.append[elemento]
+
+        if dicCocineros["Estado del cocinero"]=="Ocupado":
+             cocineros_ocupados.append(dicCocineros)
+        else:
+             cocineros_libres.append(dicCocineros)
+
+    return cocineros_ocupados,cocineros_libres,ordenes_espera
+                
+print(Gest_cocineros(lista_cocineros))
+
+# GLOBAL PARA PODER UTILIZARLAS EN OTRAS FUNCIONES
+global conserje_libre
+global conserje_ocupado
+conserje_libre= []
+conserje_ocupado=[]
+
+def Gest_conserjes (lista_limpieza):
+
+    for conserje in lista_limpieza:
+        dicConserjes={
+            "Nombre del conserje": conserje,
+            "Estado del conserje": "Libre"
+        }
+        if dicConserjes["Estado del conserje"]=="Ocupado":
+            conserje_ocupado.append(dicConserjes)
+        else:
+            conserje_libre.append(dicConserjes)
+
+    return conserje_libre,conserje_ocupado
+
+print(Gest_conserjes(lista_limpieza))
+
